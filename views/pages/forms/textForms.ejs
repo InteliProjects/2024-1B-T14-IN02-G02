@@ -1,0 +1,19 @@
+<div id="forms">
+    <div class="container-fluid">
+        <div class="row justify-content-center"> 
+            <div class="col-12 col-sm-8"> 
+                <h2 class="text-center">Por que você não gostaria de ter um cão?</h2>   
+                <br/>
+                <div class="mx-auto" style="max-width: 800px"> 
+                    <div class="form-group">
+                        <textarea class="form-control" id="answer" name="answer" type="text" :class="[formErrors.answer ? 'is-invalid' : '']" v-model.trim="formData.answer" placeholder="Escreva sua resposta" autocomplete="off"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

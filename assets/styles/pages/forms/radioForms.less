@@ -1,0 +1,33 @@
+input[type=radio]     {
+    border: 0px;
+    width: 25px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.custom-radio .custom-control-label::before {   
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: white;
+    border-color: #007bff;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    top: .2rem;
+    left: .2rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+.custom-control {
+    background-color: #C6C5CE;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    margin-right: 0.75rem;
+    padding: 0.5rem;
+}

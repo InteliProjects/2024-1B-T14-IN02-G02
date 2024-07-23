@@ -1,0 +1,25 @@
+
+<div class="col-12 col-sm-8">
+  <h2 class="text-center"><%= field.question %></h2>
+  <br />
+  <div class="mx-auto">
+    <div class="row">
+      <div class="form-group">
+        <textarea
+          class="form-control wd-form-control"
+          id="answer"
+          name="answer"
+          type="text"
+          :placeholder="field.placeholder"
+          autocomplete="off"
+          rows="8"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <p class="text-end">
+        <small>0/400</small>
+      </p>
+    </div>
+  </div>
+</div>

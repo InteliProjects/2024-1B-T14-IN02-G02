@@ -1,0 +1,145 @@
+/**
+ * importer.less
+ *
+ * By default, new Sails projects are configured to compile this file
+ * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
+ * included automatically unless they are imported below.
+ *
+ * For more information see:
+ *   https://sailsjs.com/anatomy/assets/styles/importer-less
+ */
+
+// Mixins and variables  (LESS mixins/variables only, no global selectors)
+@import 'mixins-and-variables/index.less';
+
+// Overall layout  (contains global selectors)
+@import 'bootstrap-overrides.less';
+@import 'layout.less';
+
+// Per-component styles
+@import 'components/stripe-card-element.component.less';
+@import 'components/ajax-button.component.less';
+@import 'components/modal.component.less';
+@import 'components/cloud-error.component.less';
+
+// Per-page styles
+
+@import 'pages/forms/textForms.less';
+@import 'pages/forms/radioForms.less';
+@import 'pages/forms/checkForms.less';
+@import 'pages/auth/login.less';
+@import 'pages/404.less';
+@import 'pages/500.less';
+@import 'pages/dashboard/home.less';
+@import 'pages/498.less';
+@import 'pages/home/contact.less';
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+* {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.layout-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('/images/background_pet.png');
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+.btn.wd-btn-primary {
+  background-color: #457B9D;
+  color: white;
+}
+
+.btn.wd-btn-primary:hover {
+  background-color: #508db4;
+  color: white;
+}
+
+.btn.wd-btn-secondary {
+  background-color: #C6C5CE;
+  color: white;
+}
+
+.wd-bg-secondary {
+  background-color: #C6C5CE;
+}
+
+.wd-bg-primary {
+  background-color: #457B9D;
+}
+
+.wd-color-primary {
+  color: #457B9D;
+}
+
+.wd-text-white {
+  color: white !important;
+}
+
+.wd-text-bold {
+  font-weight: bold;
+}
+
+.wd-rounded-md {
+  border-radius: 0.300rem;
+}
+
+.wd-text-danger {
+  color: #E63946
+}
+
+#dogImage {
+  height: 500px;
+}
+
+.wd-input-background {
+  border-radius: 6px;
+  background: rgba(217, 217, 217, 0.50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px 15px 15px;
+}
+
+.wd-input-background.is-invalid {
+  background: rgba(211, 187, 187, 0.5);
+}
+
+.wd-form-control {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  width: 100%;
+  font-weight: 700;
+}
+
+.wd-form-control:focus {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.wd-input-background.is-invalid .wd-form-control {
+  border-color: var(--bs-form-invalid-border-color);
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.wd-input-underline { 
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.wd-input-background.is-invalid .wd-input-underline { 
+  border-bottom: 2px solid red;
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Baloo+Da+2:wght@400..800&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .banner-image {
+            background-image: url('./images/home/cachorro-banner-home.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 75vh;
+        }
+        .cover {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+        }
+        .banner-text {
+            position: absolute;
+            top: 22%;
+            right: 2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Anton", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+        }
+        .banner-text h1, .banner-text span {
+            font-family: "Anton", sans-serif;
+        }
+        .banner-text span {
+            color: #E63946;
+        }
+        .forms-button {
+            border: 2px solid #FFCD2F;
+            background-color: #FFCD2F;
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 700;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .banner-text {
+                right: 10%;
+            }
+            .questionary-btn {
+                font-size: 24px;
+            }
+        }
+
+        .data-section {
+            display: flex;
+            flex-direction: column;
+            margin: 10vh 0;
+            text-align: center;
+            height: 95vh;
+            justify-content: space-between;
+        }
+
+        .data-section h3, .data-section p {
+            color: black;
+        }
+
+        .section-title {
+            background-color: #457B9D;
+            color: white;
+            font-family: 'Alata', sans-serif;
+            padding: 5% 0;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .data-section .data-view {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100%;
+        }
+
+        .data-section .data-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .data-section .data-section__corner {
+            display: none;
+        }
+
+        .data-section .data {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .data-section .data h3 {
+            font-size: 42px;
+            font-weight: bold;
+            font-family: "Baloo Da 2", sans-serif;
+        }
+        .data-section .data-view .data p {
+            font-size: 12px;
+            font-weight: bold;
+            font-family: 'Alata', sans-serif;
+        }
+
+        .data-view__description h3 {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Baloo Da 2", sans-serif;
+            text-transform: uppercase;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .data-section {
+                position: relative;
+                height: 95vh;
+            }
+            .section-title {
+                height: 15vh;
+                padding: 0 5%;
+                text-align: start;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+            }
+            .data-section .data-section__corner {
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: -35%;
+                zoom: 0.7;
+            }
+            .data-section .data-list {
+                flex-direction: row;
+            }
+            .data-section .data-view {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 15vh;
+            }
+            .data-section .data h3 {
+                font-size: 54px;
+            }
+            .data-section .data-view .data p {
+                font-size: 16px;
+            }
+            .data-view .data-list {
+                gap: 8vw;
+            }
+            .data-view__description h3 {
+                font-size: 40px;
+                font-family: "Baloo Da 2", sans-serif;
+            }
+
+            .data-view__description p {
+                margin: 0 10%;
+            }
+        }
+
+        .project {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            color: black;
+            gap: 5vh;
+        }
+
+        .project .project-flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .project .title {
+            font-size: 24px;
+            font-family: "Baloo Da 2";
+            font-weight: 900;
+        }
+
+        .project .forms-btn-mobile {
+            width: 50%;
+            align-self: center;
+        }
+
+        .project .forms-btn-desktop {
+            display: none;
+        }
+
+        .project .title, .project .description {
+            padding: 0 5%;
+        }
+
+        .project .project-img-mobile {
+            width: 90%;
+            align-self: center;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .project .project-flex {
+                display: flex;
+                justify-content: space-around;
+            }
+            .project .content {
+                width: 50%;
+            }
+            .project-img-desktop {
+                display: block;
+                border-radius: 15px;
+                width: calc(100% / 3);
+            }
+            .project .forms-button {
+                width: 70%;
+                font-size: 24px;
+            }
+            .project .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8vh;
+            }
+            .project .content .title {
+                font-size: 32px;
+            }
+            .project-img-mobile, .forms-btn-mobile {
+                display: none; 
+            }
+            .project .forms-btn-desktop {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .project-img-desktop {
+                display: none;
+            }
+        }
+
+        .about-us .content {
+            background-image: url('./images/home/about-us-bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 90vh;
+        }
+
+        .about-us .cover {
+            background: rgba(217, 217, 217, 0.34);
+        }
+
+        .about-us-flex {
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .about-us .content .card {
+            background-color: rgba(5, 65, 11, 0.39);
+            color: white;
+            text-align: center;
+            padding: 5% 2% 3%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .about-us .content {
+                background-image: url('./images/home/about-us-bg-desktop.png');
+            }
+            .about-us .content .card {
+                width: 50%;
+                padding: 4% 2% 2%;
+            }
+            .about-us .inspa-logo {
+                width: 50%;
+            }
+        }
+
+        .admin .content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            padding: 5%;
+            color: black;
+        }
+
+        .admin .content .title h1 {
+            font-size: 32px;
+            font-family: "Baloo Da 2", sans-serif;
+            font-weight: 900;
+        }
+
+        .admin .content .title h3 {
+            font-size: 16px;
+        }
+
+        .admin .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5% 5% 0;
+            text-align: center;
+            border-radius: 30px;
+            background-color: rgba(5, 65, 11, 0.39);
+            gap: 2vh;
+            width: 100%;
+        }
+
+        .admin .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .admin .contact-btn {
+            border: 2px solid #FFCD2F;
+            background-color: #FFCD2F;
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 700;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .admin .cards {
+                display: flex;
+                height: 50vh;
+                justify-content: space-around;
+            }
+
+            .admin .card {
+                width: 46%;
+            }
+
+            .admin .cards .card-1 img {
+                width: 70%;
+            }
+            .admin .card-1-mobile {
+                display: none;
+            }
+            .admin .contact-btn {
+                font-size: 20px;
+                padding: 2%;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .admin .cards {
+                display: none;
+            }
+        }
+
+    </style>
+    <title>Abandono Zero</title>
+</head>
+<body>
+    <main>
+        <section class="banner-image">
+            <div class="cover">
+                <div class="banner-text">
+                    <h1><span>Adote</span> agora<br>essa causa</h1>
+                    <button class="btn forms-button">Questionário</button>
+                </div>
+            </div>
+        </section>
+        <section class="data-section">
+            <article class="section-title">
+                <h1>Abandono de Cachorros</h1>
+            </article>
+            
+            <article class="data-view">
+                <div class="data-view__description">
+                    <h3>Cada rua, um cachorro sem lar</h3>
+                    <p>É uma triste realidade que vários cães são deixados de sem um lar em todos os paises. Queremos transfromar a vida desses cachorros sem uma casa para morar.</p>
+                </div>
+                <div class="data-list">
+                    <div class="data">
+                        <h3>143.000.000</h3>
+                        <p>Cachorros que moram na rua</p>
+                    </div>
+                    <div class="data">
+                        <h3>700.000</h3>
+                        <p>Cachorros abandonados por ano</p>
+                    </div>
+                    <div class="data">
+                        <h3>12.000.000</h3>
+                        <p>Cachorros que moram em abrigos</p>
+                    </div>
+                </div>
+            </article>
+            <img src="./images/home/right_bottom_corner.png" alt="" class="data-section__corner">
+        </section>
+        <section class="project">
+            <article class="section-title">
+                <h1>Projeto</h1>
+            </article>
+            <article class="project-flex">
+                <img src="./images/home/project_dog_desktop.png" alt="" class="project-img-desktop">
+                <div class="content">
+                    <h1 class="title">Junte-se a esta causa</h1>
+                    <p class="description">Ao preencher o questionário, você nos ajuda a entender as motivações que levam tutores a não ficarem com seu cão. Assim, podemos desenvolver soluções direcionadas e eficazes, provocando medidas efetivas para direcionar cada animal a um lar saudável e seguro.</p>
+                    <button class="forms-button forms-btn-desktop btn">Questionário</button>
+                </div>
+            </article>
+            <img src="./images/home/project_dog.png" alt="" class="project-img-mobile">
+            <button class="forms-btn-mobile forms-button btn">Questionário</button>
+            <div class="corners">
+                <img src="" alt="" class="project__top-corner-1">
+                <img src="" alt="" class="project__top-corner-2">
+                <img src="" alt="" class="project__down-corner-1">
+                <img src="" alt="" class="project__down-corner-2">
+            </div>
+        </section>
+        <section class="about-us">
+            <article class="section-title">
+                <h1>Quem somos?</h1>
+            </article>
+            <article class="content">
+                <div class="cover about-us-flex">
+                    <img src="./images/home/inspa-logo.svg" alt="" class="inspa-logo">
+                    <div class="card">
+                        <p>INSPA é uma instituição comprometida há 12 anos com a liderança na área da educação em comportamento e bem-estar animal. tem como missão revolucionar a compreensão e a prática profissional das relações entre humanos e animais, introduzindo o conceito de família multiespécie.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="admin">
+            <article class="section-title">
+                <h1>ADM</h1>
+            </article>
+            <article class="content">
+                <div class="title">
+                    <h1>Você busca fazer a diferença na sociedade?</h1>
+                    <h3>E você é um pesquisador apaixonado por cachorros?</h3>
+                </div>
+                <div class="card card-1-mobile">
+                    <img src="./images/home/adm_dog_card.png" alt="">
+                    <p class="admin__description">Se sim, esta é a sua chance de se juntar à nossa equipe e contribuir para a construção de um futuro melhor para os animais!</p>
+                </div>
+                <div class="cards">
+                    <div class="card card-1">
+                        <img src="./images/home/adm_dog_card.png" alt="">
+                        <p class="admin__description">Se sim, esta é a sua chance de se juntar à nossa equipe e contribuir para a construção de um futuro melhor para os animais!</p>
+                    </div>
+                    <div class="card card-2">
+                        <img src="./images/home/adm_dog_card_2.png" alt="">
+                        <p class="admin__description">Se você se identifica com os valores e objetivos do nosso projeto, entre em contato conosco através do e-mail:</p>
+                    </div>
+                </div>
+                <button class="contact-btn btn">Entre em contato aqui</button>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+#!/bin/bash
+# Prevents force-pushing to master
+
+echo -e "===\n>> Pre-push Hook: Verificando a branch\n"
+
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+PROTECTED_BRANCHES="^(master|develop|main)"
+
+if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]
+then
+  echo -e "\n🚫 Você não pode fazer um commit direto pra $BRANCH. "
+  exit 1
+fi
+
+echo -e ">> Finalizando validação de branchs \n==="
+
+exit 0

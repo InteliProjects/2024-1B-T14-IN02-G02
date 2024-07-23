@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato</title>
+</head>
+<body>
+    <div id="contato" style="background-color: #e5e6e2">
+        <div class="container flex-grow-1 d-flex" id="fora">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="green-box-contact content">
+                        <h1 id="tituloC">CONTATO</h1>
+                        <h1 id="texto">
+                            Entre em contato conosco caso você seja um tutor ou
+                            <br />pesquisador e deseje ter acesso aos dados coletados pela
+                            pesquisa.
+                        </h1>
+                        <img src="./images/contato.svg" id="imagem" alt="Contato" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-right contact-box">
+                    <form class="green-box-contact" id="contactForm">
+                        <h1 id="titulo">Entre em contato</h1>
+                        <div class="form-group">
+                            <label for="nome">
+                                <span style="color: red">*</span> 
+                                Nome:
+                            </label>
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Digite seu nome..."
+                                required
+                            /><br /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <span style="color: red">*</span> 
+                                Email:
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Digite seu e-mail..."
+                                required
+                            /><br /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input
+                                type="text"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="Digite seu telefone..."
+                            /><br /><br />
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-1">
+                                    <input type="checkbox" id="subscribe" name="subscribe" />
+                                </div>
+                                <div class="col-sm-6 col-md-11 d-flex">
+                                    <label for="subscribe">
+                                        Você permite que o Inspa entre em contato através do seu
+                                        e-mail e/ou telefone?
+                                    </label><br />
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning btn-lg col-12" onclick="sendContact()">
+                            <b class="text-black">Enviar</b>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendContact() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+
+            fetch('/api/v1/register-contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: nome, email: email, telefone: telefone })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Falha na resposta do servidor');
+                return response.json();
+            })
+            .then(data => {
+                alert('Contato enviado com sucesso!');
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar contato:', error);
+                alert('Falha ao enviar o contato. Verifique o console para mais detalhes.');
+            });
+        }
+    </script>
+</body>
+</html>

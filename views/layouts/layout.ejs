@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Abandono Zero</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/dependencies/bootstrap-5/bootstrap.css">
+    <link rel="stylesheet" href="/dependencies/fontawesome.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Baloo+Da+2:wght@400..800&display=swap');
+
+      * {
+          padding: 0; margin: 0;
+          box-sizing: border-box;
+      }
+      .banner {
+          background-image: url('./images/home/cachorro-banner-home.png');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 80vh;
+      }
+      .banner__cover {
+          position: relative;
+          background-color: rgba(0, 0, 0, 0.5);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+      .banner__title {
+          font-family: "Anton", sans-serif;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-weight: 100;
+          color: white;
+          text-align: center;
+      }
+      .banner__title .red-text {
+          font-family: "Anton", sans-serif;
+          color: #E63946;
+      }
+      .banner__button {
+          width: 35%;
+          background-color: #FFCD2F;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+          font-family: 'Comfortaa', sans-serif;
+      }
+
+      @media screen and (min-width: 1024px) {
+          .desktop {
+             display: block !important;
+          }
+          .mobile {
+              display: none !important;
+          }
+          .banner__cover {
+              padding-top: 8%;
+              position: static;
+              justify-content: space-around;
+              align-items: center;
+          }
+          .banner__button {
+              font-size: 20px;
+          }
+      }
+
+      @media screen and (max-width: 1023px) {
+          .desktop {
+              display: none !important;
+          }
+          .mobile {
+              display: block !important;
+          }
+          .banner__button {
+              position: absolute;
+              right: 10%;
+              top: 37%;
+          }
+          .banner__title {
+              position: absolute;
+              right: 8%;
+              top: 20%;
+          }
+      }
+
+      .causa {
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
+      .causa__header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .causa__header__title {
+          color: black;
+          text-transform: uppercase;
+          font-weight: 900;
+      }
+      .causa__header__title .blue-text {
+          font-family: 'Baloo Da 2', sans-serif;
+          color: #457B9D;
+      }
+      .causa__header__title .commom-text {
+          font-family: 'Baloo Da 2', sans-serif;
+          position: relative;
+          padding-bottom: 0px;
+      }
+      .causa__header__title .commom-text::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 5px;
+          background-color: #457B9D;
+          border-radius: 5px;
+      }
+      .causa__images {
+          position: relative;
+          height: 30%;
+      }
+      .causa__images > * {
+          position: absolute;
+      }
+      .causa__images__dog1 {
+          top: 0; left: 0;
+          width: 53%; z-index: 4;
+      }
+      .causa__images__dog2 {
+          top: 20%; left: 35%;
+          width: 53%; z-index: 5;
+      }
+      .causa__images__vector1 {
+          top: 78%; left: 75%;
+          width: 20%; z-index: 3;
+      }
+      .causa__images__vector2 {
+          top: 50%; left: 20%;
+          width: 20%; z-index: 3;
+      }
+      .causa__content {
+          height: calc(100%/3);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 15%;
+      }
+      .causa__content__description {
+          font-size: 13px;
+          font-family: 'Comfortaa', sans-serif;
+      }
+      .causa__content__button {
+          background-color: #FFCD2F;
+          font-family: 'Comfortaa', sans-serif;
+          font-weight: 700;
+          font-size: 18px;
+          text-align: center;
+          width: 100%;
+      }
+      
+      @media screen and (min-width: 1024px) {
+          .causa__header__title {
+              font-size: 48px;
+          }
+          .causa {
+              position: relative;
+              flex-direction: row;
+          }
+          .causa__header {
+              position: absolute;
+              right: 15%;
+              top: 10%;
+          }
+          .causa__images {
+              height: 100%;
+              width: 60vw;
+          }
+          .causa__content {
+              margin: 20% 5% 0 0;
+              padding: 0;
+              width: 35vw;
+              height: 45%;
+          }
+          .causa__content__description {
+              font-size: 16px;
+          }
+          .causa__content__button {
+              height: 18%;
+              font-size: 24px;
+              z-index: 5;
+          }
+          .causa__images__dog1 {
+              top: 10%; left: 0;
+              width: 50%; z-index: 4;
+          }
+          .causa__images__dog2 {
+              top: 32%; left: 25%;
+              width: 60%; z-index: 5;
+          }
+          .causa__images__vector1 {
+              top: 64%;
+              width: 35%;
+              z-index: 0;
+          }
+          .causa__images__vector2 {
+              top: 30%;
+              left: -8%;
+              width: 50%;
+          }
+      }
+
+      .quem-somos {
+          background: rgba(69, 123, 157, 0.95);
+          height: 110vh;
+          display: flex;
+          justify-content: space-evenly;
+          flex-direction: column;
+      }
+      .quem-somos__title {
+          text-align: center;
+          font-family: 'Baloo Da 2', sans-serif;
+          font-weight: 700;
+          font-size: 40px;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          height: 10vh;
+      }
+      .quem-somos__description {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          gap: 5vh;
+      }
+      .quem-somos__description__logo {
+          background-color: #8BBD90;
+          width: 80%;
+          border-radius: 0 30px 30px 30px;
+          margin-left: 3%;
+      }
+      .quem-somos__description__logo img {
+          width: 100%;
+      }
+      .quem-somos__description__texto {
+          align-self: flex-end;
+          text-align: center;
+          width: 80%;
+          margin-right: 3%;
+          padding: 20px 10px 0;
+          border-radius: 30px 30px 0px 30px;
+          background-color: rgba(5, 65, 11, 0.39);
+          color: white;
+          font-family: 'Comfortaa', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+      }
+      .quem-somos__description__dog {
+          align-self: flex-end;
+          text-align: center;
+          margin-right: 3%;
+          width: 80%;
+          padding: 10px;
+          border-radius: 30px 30px 0px 30px;
+          background-color: rgba(5, 65, 11, 0.39);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      @media screen and (min-width: 1024px) {
+          .quem-somos__title {
+              font-size: 64px;
+          }
+          .quem-somos__description__logo {
+              width: 60%;
+          }
+          .quem-somos {
+              flex-direction: row;
+              height: 100vh;
+          }
+          .quem-somos__description {
+              align-self: flex-start;
+              gap: 3vh;
+          }
+          .quem-somos__description__texto {
+              font-size: 16px;
+          }
+      }
+
+      .adm {
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
+      .adm__header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin: 0 10%;
+      }
+      .adm__header__title {
+          font-family: 'Baloo Da 2', sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 10px;
+      }
+      .adm__header__subtitle {
+          font-family: 'Comfortaa', sans-serif;
+          font-size: 18px;
+      }
+      .adm__content {
+          position: relative;
+          height: 100%;
+      }
+      .adm__content__decoration {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          min-height: 500px;
+      }
+
+      .adm__content__decoration img {
+        position: absolute;
+      }
+
+      @media screen and (min-width: 1024px) {
+
+          .adm__decoration__imagem1, .adm__decoration__imagem2, .adm__decoration__imagem3 {
+              width: 50px;
+          }
+          .adm__header__title {
+              font-size: 42px;
+          }
+          .adm__header__subtitle {
+              font-size: 36px;
+          }
+      }
+
+      @media screen and (max-width: 1023px) {
+        .adm_img_mobile {
+          width: 100%;
+        }
+      }
+
+      body {
+        overflow-x: hidden;
+        width: 100vw;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <!-- <img src="..." class="rounded me-2" alt="..."> -->
+          <div class="rounded me-2" style="width: 20px; height: 20px; background-color: #007bff;"></div>
+          <strong class="me-auto title">Bootstrap</strong>
+          <small>Agora</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <!-- ... -->
+        </div>
+      </div>
+    </div>
+    <div class="layout-body">
+      <nav class="navbar navbar-expand-lg wd-bg-primary">
+          <div class="container-fluid d-flex justify-content-center">
+              <a class="navbar-brand wd-text-white" href="#">Abandono Zero</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon wd-text-white"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a href="/" type="button" class="nav-button btn">Home</a>
+                  </li>
+                  <li class=" nav-item">
+                    <a href="/" type="button" class="nav-button btn">Projeto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/#quem_somos" type="button" class="nav-button btn">Quem somos?</a>
+                  </li>
+                  <li class=" nav-item">
+                    <a href="/dashboard" type="button" class="nav-button btn">ADM</a>
+                  </li>
+                  <li class=" nav-item">
+                    <a href="/login" type="button" class="nav-button btn">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/form/1" type="button" id="nav-question" class=" btn btn-primary custom-btn-color question-button">Questionário</a>
+                  </li>
+                  
+                  </ul>
+                  <div class="d-flex justify-content-center align-items-center">
+                      <img src="../images/brasiL.png" alt="Bandeira Brasil" class="bandeiras mx-2" onclick="">
+                      <img src="../images/USA.png" alt="Bandeira dos Estados Unidos" class="bandeiras mx-2" onclick="">
+                      <img src="../images/espanha.png" alt="Bandeira da Espanha" class="bandeiras mx-2" onclick="">
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <%-body%>
+    </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>delete window.self;</script>
+
+    <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
+    <script src="/dependencies/lodash.js"></script>
+    <script src="/dependencies/jquery.min.js"></script>
+    <script src="/dependencies/vue.js"></script>
+    <script src="/dependencies/vue-router.js"></script>
+    <script src="/dependencies/cloud.js"></script>
+    <script src="/dependencies/moment.js"></script>
+    <script src="/dependencies/parasails.js"></script>
+    <script src="/js/cloud.setup.js"></script>
+    <script src="/js/components/account-notification-banner.component.js"></script>
+    <script src="/js/components/ajax-button.component.js"></script>
+    <script src="/js/components/ajax-form.component.js"></script>
+    <script src="/js/components/bootstrap.min.js"></script>
+    <script src="/js/components/cloud-error.component.js"></script>
+    <script src="/js/components/dynamic-fields.component.js"></script>
+    <script src="/js/components/dynamic-form.component.js"></script>
+    <script src="/js/components/js-timestamp.component.js"></script>
+    <script src="/js/components/modal.component.js"></script>
+    <script src="/js/components/stripe-card-element.component.js"></script>
+    <script src="/js/utilities/linked-fields.js"></script>
+    <script src="/js/utilities/open-stripe-checkout.js"></script>
+    <script src="/js/utilities/throw-toast.js"></script>
+    <script src="/js/pages/auth/change-password.page.js"></script>
+    <script src="/js/pages/auth/login.page.js"></script>
+    <script src="/js/pages/auth/recover-password.page.js"></script>
+    <script src="/js/pages/dashboard/home.page.js"></script>
+    <script src="/js/pages/entrance/confirmed-email.page.js"></script>
+    <script src="/js/pages/entrance/new-password.page.js"></script>
+    <script src="/js/pages/entrance/signup.page.js"></script>
+    <script src="/js/pages/forms/form.page.js"></script>
+    <script src="/js/pages/textInput-form.page.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

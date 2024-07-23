@@ -1,0 +1,33 @@
+input[type=checkbox]     {
+    border: 0px;
+    width: 25px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.custom-checkbox .custom-control-label::before {
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: white;
+    border-color: #007bff;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: #007bff;
+}
+.question-container {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+.custom-control {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
